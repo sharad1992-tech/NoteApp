@@ -25,6 +25,7 @@ class NoteRVAdapter(
         val dateTV = itemView.findViewById<TextView>(R.id.tv_date)
         val editedTV = itemView.findViewById<TextView>(R.id.tv_edited)
         val deleteIV = itemView.findViewById<ImageView>(R.id.iv_delete)
+        val descriptionTV = itemView.findViewById<TextView>(R.id.tv_description)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -37,6 +38,7 @@ class NoteRVAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.noteTV.setText(allNotes.get(position).noteTitle)
+        holder.descriptionTV.setText(allNotes.get(position).noteDescription)
         holder.dateTV.setText("Last Updated : " + allNotes.get(position).timeStamp)
 
         if (allNotes.get(position).isNoteEdited){
